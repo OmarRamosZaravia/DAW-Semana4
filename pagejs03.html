@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+
+        // Distintos tipos de Funciones en JavaScript
+
+        // funcion 
+        function suma (a,b) {
+            return a+b;
+            }
+        r = suma(5,6);
+        document.write('El resultado es: ' + r);
+
+        // funcion anonima
+        const suma2 = function (a,b) {
+            return a+b;
+        }
+        r2 = suma2(2,6);
+        document.write('<br>El resultado es: ' + r2);
+
+
+        // la funcion como objeto
+        let miFuncion = new Function("a", "b", "return a+b");
+        let r3 = miFuncion(4,6); 
+        document.write('<br>El resultado es: ' + r3);
+
+
+        // funcion autoinvocada
+        (function(a, b) {
+            r4=a+b;
+            return r4;
+        })(15, 16);
+        document.write('<br>El resultado es: ' + r4);
+
+
+        // funcion de flecha       de una sola sentencia 
+        let f1 =(a, b) => a+b;
+        document.write('<br>El resultado es: ' + f1(5,6));
+
+
+        // funcion de flecha        de varias sentencias     
+        let f2 =(a, b) => {
+            return a+b;
+        } 
+        document.write('<br>El resultado es: ' + f2(5,7));
+
+
+        // objeto arguments
+        function sumar() {
+            let suma7 = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                suma7 += arguments[i];
+            }
+            return suma7;
+        }
+    
+        // Llamamos a la función sumar con algunos argumentos
+        const resultado = sumar(2, 4, 6, 8, 10);
+        document.write('<br>El resultado es: ' + resultado);
+
+
+
+        // funciones clousures
+        function suma8(x) {
+            return function(y) {
+                return x + y;
+            };
+        }
+        document.write('<br>El resultado es: ' + suma8(9)(2));  
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>
